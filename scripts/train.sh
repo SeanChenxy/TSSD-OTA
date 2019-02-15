@@ -1,0 +1,27 @@
+python ../train.py \
+    --lr 0.0001 \
+    --gamma 0.1 \
+    --momentum 0.9 \
+    --visdom no \
+    --send_images_to_visdom no \
+    --save_folder '../weights' \
+    --step_list 15000 30000 \
+    --save_interval 5000 \
+    --batch_size 8 \
+    --seq_len 8 \
+    --ssd_dim 300 \
+    --gpu_ids '2,3' \
+    --dataset_name 'seqVID2017' \
+    --augm_type 'base' \
+    --num_workers 1 \
+    --set_file_name 'train_video_remove_no_object' \
+    --skip 'yes' \
+    --tssd 'tblstm' \
+    --freeze 1 \
+    --attention 'yes' \
+    --association 'no' \
+    --asso_top_k 75 \
+    --asso_conf 0.1 \
+    --loss_coe 1.0 1.0 0.5 2.0 \
+    --resume_from_ssd '../weights/VIDtssd/ssd300_VIDDET_512/ssd300_VIDDET_5000.pth' \
+    --resume '/home/sean/Documents/ssd.pytorch/weights/VIDtssd/trained_model/ssd300_VID2017_6445.pth'
